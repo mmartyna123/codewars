@@ -9,7 +9,7 @@
 # I is misinterpreted as 1
 # The test cases contain numbers only by mistake.
 
-# my solution:
+# my solutions:
 def correct(s):
     res = ''
     for i in s:
@@ -22,3 +22,6 @@ def correct(s):
         else:
             res += i
     return res
+
+def correct2(s):
+    return s.replace('5', 'S').replace('1', 'I').replace('0', 'O')

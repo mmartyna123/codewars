@@ -10,3 +10,7 @@ def litres(time):
 
 def litres1(time):
     return time//2
+
+import math
+def litres2(time):
+    return math.floor(time*0.5)

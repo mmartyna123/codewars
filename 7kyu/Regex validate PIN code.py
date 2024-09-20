@@ -2,6 +2,9 @@
 
 # If the function is passed a valid PIN string, return true, else return false.
 
-# my solution:
-def validate_pin(pin):
+# my solutions:
+def validate_pin0(pin):
     return (len(pin) == 4 or len(pin) == 6) and pin.isdigit()
+
+def validate_pin1(pin):
+    return len(pin) in (4,6) and pin.isdigit()

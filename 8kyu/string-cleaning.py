@@ -6,9 +6,12 @@
 # 'This looks5 grea8t!' -> 'This looks great!'
 # Your harried co-workers are looking to you for a solution to take this garbled text and remove all of the numbers. Your program will take in a string and clean out all numeric characters, and return a string with spacing and special characters ~#$%^&!@*():;"'.,? all intact.
 
-# my solution:
-def string_clean(s):
+# my solutions:
+def string_clean0(s):
     for i in "0123456789":
         s = s.replace(i, '')
     return s
+
+def string_clean1(s):
+    return ''.join(character for character in s if not character.isdigit())
         

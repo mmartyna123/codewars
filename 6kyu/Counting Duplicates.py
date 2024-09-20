@@ -9,10 +9,19 @@
 # "aA11" -> 2 # 'a' and '1'
 # "ABBA" -> 2 # 'A' and 'B' each occur twice
 
-# my solution:
+# my solutions:
 from collections import Counter
-def duplicate_count(text):
+def duplicate_count0(text):
     text = text.lower()
     count_of_duplicates = Counter(text)
     return sum(1 for count in count_of_duplicates.values() if count > 1)
+     
+     
+def duplicate_count1(text):
+    count = 0
+    low_txt = text.lower()
+    for character in set(low_txt):
+        if low_txt.count(character) > 1:
+            count += 1
+    return count
      

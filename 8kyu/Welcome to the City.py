@@ -4,3 +4,7 @@
 
 # ['John', 'Smith'], 'Phoenix', 'Arizona'
 # This example will return the string Hello, John Smith! Welcome to Phoenix, Arizona!
+
+# my solution:
+def say_hello(name, city, state):
+    return f"Hello, {' '.join(name)}! Welcome to {city}, {state}!"

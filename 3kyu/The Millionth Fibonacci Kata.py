@@ -20,3 +20,38 @@
 # Write an algorithm that can handle n up to 2000000.
 
 # Your algorithm must output the exact integer answer, to full precision. Also, it must correctly handle negative numbers as input.
+
+# my solution:
+
+def matrix_multiply(A, B):
+    return [
+        [A[0][0] * B[0][0] + A[0][1] * B[1][0], A[0][0] * B[0][1] + A[0][1] * B[1][1]],
+        [A[1][0] * B[0][0] + A[1][1] * B[1][0], A[1][0] * B[0][1] + A[1][1] * B[1][1]]
+    ]
+
+def matrix_power(matrix, n):
+    result = [[1, 0], [0, 1]] 
+    base = matrix
+    while n > 0:
+        if n % 2 == 1:
+            result = matrix_multiply(result, base)
+        base = matrix_multiply(base, base)
+        n //= 2
+    return result
+
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1 or n == -1:
+        return 1
+    
+    if n > 0:
+        F = [[1, 1], [1, 0]]
+        result = matrix_power(F, n - 1)
+        return result[0][0] 
+    else:
+        pos_fib = fib(-n) 
+        if n % 2 == 0:
+            return -pos_fib
+        else:
+            return pos_fib 

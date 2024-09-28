@@ -8,8 +8,17 @@
 # solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to uppercase.
 # solve("coDE") = "code". Upper == lowercase. Change all to lowercase.
 
-# my solution:
-def solve(s):
+# my solutions:
+def solve0(s):
     upper_count = sum(1 for character in s if character.isupper())
     lower_count = sum(1 for character in s if character.islower())
+    return s.lower() if lower_count >= upper_count else s.upper()
+
+def solve1(s):
+    upper_count, lower_count = 0, 0
+    for character in s:
+        if character.isupper():
+            upper_count += 1
+        else:
+            lower_count += 1
     return s.lower() if lower_count >= upper_count else s.upper()

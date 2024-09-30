@@ -20,8 +20,8 @@
 # { "*_allow", "books_allow", "movies_deny" }, "games"  =>  True
 # { "*_allow", "*_deny" }, "movies"  =>  False
 
-# my solution:
-def has_permission(user_info, accessing_data):
+# my solutions:
+def has_permission0(user_info, accessing_data):
     res = False
     if '*_allow' in user_info:
         res = True
@@ -32,3 +32,14 @@ def has_permission(user_info, accessing_data):
     if f'{accessing_data}_deny' in user_info:
         res = False
     return res
+
+def has_permission1(user_info, accessing_data):
+    if f'{accessing_data}_deny' in user_info:
+        return False
+    if f'{accessing_data}_allow' in user_info:
+        return True
+    if '*_deny' in user_info:
+        return False
+    if '*_allow' in user_info:
+        return  True
+    return False

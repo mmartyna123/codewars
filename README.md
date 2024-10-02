@@ -1,4 +1,6 @@
 # **Codewars Python Challenges Repository**
+![Codewars Badge](https://www.codewars.com/users/marita_/badges/large)
+
 ## Overview
 This repository contains my solutions to various Codewars challenges written in Python. They are divided by their *kyu* rank, reflecting their difficulty level. The goal of this repository 
 is to demonstrate problem-solving skills,

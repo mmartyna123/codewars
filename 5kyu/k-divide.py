@@ -35,7 +35,7 @@
 
 # my solution:
 # they might need optimization in the future
-def calculate_sum(N, K):
+def calculate_sum0(N, K):
     sum = 0      
     for number in range(1,N+1):
         while number % K ==0:
@@ -44,10 +44,19 @@ def calculate_sum(N, K):
         sum += number     
     return sum
 
-def calculate_sum(N, K):
+def calculate_sum1(N, K):
     sum = 0     
     for number in range(1,N+1):
         while number % K ==0:
             number //= K
         sum += number     
+    return sum
+
+# The optimized solution:
+def calculate_sum(N, K):
+    sum = 0     
+    while N > 0:
+        sum += N * (N+1) //2
+        N //= K
+        sum -= K * N * (N+1) //2
     return sum

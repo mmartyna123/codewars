@@ -34,11 +34,20 @@
 # So, 1+2+3+1+5+6+7+2+9+10=46
 
 # my solution:
+# they might need optimization in the future
 def calculate_sum(N, K):
     sum = 0      
     for number in range(1,N+1):
         while number % K ==0:
             quotient, remainder = divmod(number, K)
             number = quotient
+        sum += number     
+    return sum
+
+def calculate_sum(N, K):
+    sum = 0     
+    for number in range(1,N+1):
+        while number % K ==0:
+            number //= K
         sum += number     
     return sum

@@ -4,10 +4,13 @@
 
 # Given [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]], your function should return [1, 2, 3, 4, 5, 6, 7, 8, 9].
 
-# my solution:
-def flatten_and_sort(array):
+# my solutions:
+def flatten_and_sort0(array):
     ans = []
     for sub_array in array:
         for item in sub_array:
             ans.append(item)
     return sorted(ans)
+
+def flatten_and_sort(array):
+    return sorted(item for sub_array in array for item in sub_array)

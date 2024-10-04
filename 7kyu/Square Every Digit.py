@@ -7,9 +7,12 @@
 # Note: The function accepts an integer and returns an integer.
 
 # my solutions:
-def square_digits(num):
+def square_digits0(num):
     str_num = str(num)
     ans=[]
     for element in str_num:
         ans.append(str(int(element)**2))
     return int("".join(ans))
+
+def square_digits1(num):
+    return int("".join(str(int(digit)**2) for digit in str(num)))

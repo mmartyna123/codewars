@@ -5,6 +5,10 @@
 # "identifier"   =>  "identifier"
 # ""             =>  ""
 
-# my solution:
-def solution(s):
+# my solutions:
+def solution0(s):
     return ''.join(' ' + character if character.isupper() else character for character in s)
+
+import re
+def solution1(s):
+    return re.sub(r'([A-Z])', r' \1', s)

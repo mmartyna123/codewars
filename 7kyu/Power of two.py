@@ -10,6 +10,9 @@
 # power_of_two(333)  ==> False
 # Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 0 is not a power of 2.
 
-# my solution:
-def power_of_two(x):
+# my solutions:
+def power_of_two0(x):
     return (x &(x-1)) == 0 if x > 0 else False
+
+def power_of_two1(x):
+    return bin(x).count('1') == 1

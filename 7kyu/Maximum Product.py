@@ -13,11 +13,15 @@
 # Explanation:
 # Max product obtained from multiplying 5 * 10  =  50 .
 
-# my solution:
-def adjacent_element_product(array):
+# my solutions:
+def adjacent_element_product0(array):
     max_product= array[0] * array[1]
     for id in range(len(array) - 1):
         product = array[id] * array[id +1]
         if product > max_product:
             max_product = product
     return max_product
+
+def adjacent_element_product1(array):
+    return max(array[id] * array[id+1] for id in range(len(array)-1))
+
